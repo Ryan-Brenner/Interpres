@@ -1,0 +1,21 @@
+{
+  "name": "polyglot_loc",
+  "description": "",
+  "main": "server.js",
+  "license": "ISC",
+  "homepage": "https://github.com/Ryan-Brenner/PolyglotL-c",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": { 
+  "bootstrap": "latest",
+  "font-awesome": "latest",
+  "animate.css": "latest",
+  "angular": "latest",
+  "angular-route": "latest"
+  }
+}

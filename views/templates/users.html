@@ -1,0 +1,62 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+
+      <form class="form-horizontal" ng-submit="usersIndexCtrl.createUser()">
+        <fieldset>
+
+          <!-- Form Name -->
+          <legend>Add New User</legend>
+
+          <!-- Text input-->
+          <div class="form-group">
+            <label class="col-md-4 control-label">User Name</label>
+            <div class="col-md-4">
+            <input id="name" ng-model="usersIndexCtrl.newUser.name" type="text" class="form-control input-md" required="">
+            </div>
+          </div>
+
+          <!-- Button -->
+          <div class="form-group">
+            <label class="col-md-4 control-label">Save User</label>
+            <div class="col-md-4">
+              <button class="btn btn-primary">Submit</button>
+            </div>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+
+  <input type="text" class="form-control" ng-model="searchText" placeholder="Search Users">
+  <div ng-repeat="user in usersIndexCtrl.users | orderBy: 'name' | filter: searchText" class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <div class="panel panel-default">
+        <div class="panel-body">
+
+          <div class='row'>
+
+            <div class="col-md-9 col-xs-12">
+              <ul class="list-group form-inline">
+                <li class="list-group-item">
+                  <h4 class='inline-header'>Name:</h4>
+                  <span ng-hide="editing"><a ng-href="{{user._id}}">{{user.name}}</a></span>
+                  <input ng-show="editing" ng-model="user.name" type="text" class="form-control input-md">
+                </li>
+
+              </ul>
+            </div>
+          </div>
+
+          <div class='panel-footer'>
+            <div class='panel-footer'>
+              <button class='btn btn-danger' ng-click="usersIndexCtrl.deleteUser(user)">Delete User</button>
+              <button class='btn btn-info' ng-hide="editing" ng-click="editing = true">Edit User</button>
+              <button class='btn btn-success' ng-show="editing" ng-click="usersIndexCtrl.editUser(user); editing = false">Save Changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
