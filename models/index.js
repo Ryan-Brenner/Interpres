@@ -1,9 +1,7 @@
 var mongoose = require("mongoose");
-mongoose.connect("mongodb://localhost/polyglot-loc_test");
+mongoose.connect("mongodb://localhost/polyglot-loc");
 
-var User = require('./user');
-
-module.exports.User = User;
+module.exports.User = require('./user');
 
 
 

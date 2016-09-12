@@ -3,7 +3,7 @@
  ************/
 
 var db = require('../models');
-
+var bcrypt = require('bcrypt');
 
 
 // GET /api/Users
@@ -14,14 +14,28 @@ function index(req, res) {
 }
 
 function create(req, res) {
-  console.log('body', req.body);
+  var data = req.body;
+  console.log(data)
+  var password = data.passTxt;
+  var saltRounds = 10;
+  var salt = bcrypt.genSaltSync(saltRounds);
+  var hash = bcrypt.hashSync(password,10);
+  var newUser = {};
+    newUser.username = data.username;
+    newUser.email = data.email;
+    newUser.password = hash
+    newUser.fName = data.fName;
+    newUser.lName = data.lName;
+    newUser.languages = data.languages;
+    newUser.role = data.role;
+    newUser.location = data.consent;
+    newUser.pois = data.pois
 
-  db.User.create(req.body, function(err, user) {
-    if (err) { console.log('error', err); }
-    console.log(user);
-    res.json(user);
-  });
-}
+  db.User.create(newUser, function(err, result) {
+    if(err) {console.log(err)};
+    res.status(200).send(result);
+  })};
+
 
 function show(req, res) {
   db.User.findById(req.params.userId, function(err, foundUser) {

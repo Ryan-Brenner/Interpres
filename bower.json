@@ -1,7 +1,7 @@
 {
   "name": "polyglot_loc",
   "description": "",
-  "main": "server.js",
+  "main": "app.js",
   "license": "ISC",
   "homepage": "https://github.com/Ryan-Brenner/PolyglotL-c",
   "ignore": [
