@@ -38,7 +38,7 @@ function UsersIndexController($http) {
         }).then(function successCallback(response) {
             vm.users.push(response.data);
         }, function errorCallback(response) {
-            console.log('There was an error posting the data');
+            console.log('There was an error posting the data', response);
         });
     }
 
