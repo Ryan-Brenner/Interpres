@@ -1,48 +1,54 @@
+
 angular
     .module('polyglot-loc')
     .controller('UsersIndexController', UsersIndexController);
 
-UsersIndexController.$inject = ['$http'];
+UsersIndexController.$inject = ['$http', '$scope'];
 
-function UsersIndexController($http) {
-    console.log("CONNECTED")
-    vm = this;
-    vm.newUser = {};
-    vm.newUser = {
-        username: vm.username,
-        email: vm.email,
-        password: vm.passTxt,
-        fName: vm.fName,
-        lName: vm.lName,
-        languages: vm.languages,
-        role: vm.role,
-        location: vm.consent,
-        pois: vm.pois
+
+function UsersIndexController($http, $scope) {
+    function init() {
+        console.log("CONNECTED")
+    $scope.newUser = {};
+    $scope.newUser.username = '';
+    $scope.newUser.email = '';
+    $scope.newUser.password = '';
+    $scope.newUser.fName = '';
+    $scope.newUser.lName = '';
+    $scope.newUser.languages = '';
+    $scope.newUser.role = ''; 
+    $scope.newUser.ocation = '';
+    $scope.newUser.pois = '';
+    console.log($scope.newUser);
     };
-    console.log(vm.newUser)
+
+    init();
+    
+
+    console.log($scope.newUser)
     $http({
         method: 'GET',
         url: '/api/users'
     }).then(function successCallback(response) {
-        vm.users = response.data;
+        $scope.users = response.data;
     }, function errorCallback(response) {
         console.log('There was an error getting the data', response);
     });
 
-    vm.createUser = function() {
-        console.log(vm.newUser)
+    $scope.createUser = function() {
+        console.log($scope.newUser)
         $http({
             method: 'POST',
             url: '/api/users',
-            data: vm.newUser,
+            data: $scope.newUser,
         }).then(function successCallback(response) {
-            vm.users.push(response.data);
+            $scope.users.push(response.data);
         }, function errorCallback(response) {
             console.log('There was an error posting the data', response);
         });
     }
 
-    vm.editUser = function(user) {
+    $scope.editUser = function(user) {
         $http({
             method: 'PUT',
             url: '/api/users/' + user._id,
@@ -54,13 +60,13 @@ function UsersIndexController($http) {
         });
     }
 
-    vm.deleteUser = function(user) {
+    $scope.deleteUser = function(user) {
         $http({
             method: 'DELETE',
             url: '/api/users/' + user._id
         }).then(function successCallback(json) {
-            var index = vm.users.indexOf(user);
-            vm.users.splice(index, 1);
+            var index = $scope.users.indexOf(user);
+            $scope.users.splice(index, 1);
         }, function errorCallback(response) {
             console.log('There was an error deleting the data', response);
         });
