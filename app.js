@@ -39,6 +39,8 @@ app.get('/api/users/:userId', controllers.users.show);
 app.put('/api/users/:userId/update', controllers.users.update);
 app.delete('/api/users/:userId', controllers.users.destroy);
 
+app.post('/login/submit', controllers.users.credCheck)
+
 app.get('/templates/:name', controllers.api.templates);
 
 /**********
