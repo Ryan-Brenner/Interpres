@@ -15,7 +15,25 @@ app.config(function($routeProvider) {
     	templateUrl: 'public/views/templates/register.html',
         controllerAs: 'usersIndexCtrl',
         controller: 'UsersIndexController'
-
-
     })
+        .when('/profile', {
+        templateUrl: 'public/views/templates/userProfile.html',
+        controller: 'UsersIndexController'
+    })
+
+        .when('/newjob', {
+        templateUrl: 'public/views/templates/newJob.html',
+        controller: 'JobsController'
+    })
+
+        .when('/review', {
+        templateUrl: 'public/views/templates/newReview.html',
+        controller: 'ReviewsController'
+    })
+
+
+
+
+
+
 });

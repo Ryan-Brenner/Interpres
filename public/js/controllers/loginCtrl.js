@@ -28,7 +28,12 @@ function loginCtrl($http, $scope, $location) {
                 console.log("Success!")
                 $location.path('/api/users/'+response.data)
             }
-            else if (response.data === false) {console.log("Incorrect Password")}
+            else if (response.data === false) {
+                console.log("Incorrect Password")
+                var e = new Error('password incorrect'); 
+                e.message
+                $location.path('/login')
+            }
         }, function errorCallback(response) {
             console.log('There was an error posting the data');
         });

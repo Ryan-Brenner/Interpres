@@ -82,7 +82,7 @@ function credCheck(req, res) {
           } else {
             res.status(200).send(false)
           }    
-          // 204 erorr was causing 2nd statement to glitch ....???
+          // 204 status was causing 2nd statement to glitch ....???
 });
 };
 
