@@ -70,16 +70,21 @@ function credCheck(req, res) {
     console.log(' I WANT TO CHECK A PASSWORD KJLHKJHKJH!');
     console.log(' THIS IS THE REWEST BODY!!!!!lksdcalsdjfc.ksdn', req.body);
 
-    db.User.find(req.body.email, function(err, foundUser) {
-        if(err) return res.status(204).send('user not found');
+    db.User.findOne({email: req.body.email}, function(err, foundUser) {
+        if(err){ return res.status(204).send('user not found')};
+        console.log(foundUser);
         var hash = foundUser.password;
-        bcrypt.compare(req.body.passTxt, hash, function(err, checkResult) {
-          if(err) return res.status(204).send('user password is incorrect');
-          console.log("you're good");
-          res.redirect(200,'/');
-        });
-    })
-}
+        var plainTxt = req.body.passTxt
+        var check = bcrypt.compareSync(plainTxt, hash)
+        console.log(check)
+          if(check){
+            res.status(200).send(foundUser.id)
+          } else {
+            res.status(200).send(false)
+          }    
+          // 204 erorr was causing 2nd statement to glitch ....???
+});
+};
 
 
 // export public methods here

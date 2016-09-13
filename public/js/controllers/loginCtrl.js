@@ -13,6 +13,8 @@ function loginCtrl($http, $scope, $location) {
         console.log($scope.credentials);
     };
 
+    init();
+
     $scope.submitForm = function() {
         console.log(' *** YOU JUST HIT SUBMIT! NO WE ARE IN THE FORM SUBMITTER! ***');
         console.log($scope.credentials);
@@ -21,10 +23,14 @@ function loginCtrl($http, $scope, $location) {
             url: '/login/submit',
             data: $scope.credentials,
         }).then(function successCallback(response) {
-            console.log("Success!")
-            $location.path('/');
+            console.log(response.data)
+            if(response.data !== false) {
+                console.log("Success!")
+                $location.path('/api/users/'+response.data)
+            }
+            else if (response.data === false) {console.log("Incorrect Password")}
         }, function errorCallback(response) {
-            console.log('There was an error posting the data', response);
+            console.log('There was an error posting the data');
         });
 	};
 };
