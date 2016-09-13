@@ -15,12 +15,8 @@ userList.push({
             });
 userList.push({
               name: 'Unchained'
+              
             });
-
-// populate each users song list
-userList.forEach(function(user) {
-  user.songs = sampleSongs;
-});
 
 
 db.User.remove({}, function(err, users){
