@@ -30,12 +30,11 @@ function loginCtrl($http, $scope, $location) {
             }
             else if (response.data === false) {
                 console.log("Incorrect Password")
-                var e = new Error('password incorrect'); 
-                e.message
                 $location.path('/login')
             }
         }, function errorCallback(response) {
-            console.log('There was an error posting the data');
+
+            console.log('username or password does not exist');
         });
 	};
 };

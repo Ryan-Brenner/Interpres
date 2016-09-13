@@ -23,12 +23,12 @@ app.config(function($routeProvider) {
 
         .when('/newjob', {
         templateUrl: 'public/views/templates/newJob.html',
-        controller: 'JobsController'
+        controller: 'jobCtrl'
     })
 
         .when('/review', {
         templateUrl: 'public/views/templates/newReview.html',
-        controller: 'ReviewsController'
+        controller: 'reviewCtrl'
     })
 
 

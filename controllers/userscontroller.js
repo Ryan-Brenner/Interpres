@@ -71,11 +71,11 @@ function credCheck(req, res) {
     console.log(' THIS IS THE REWEST BODY!!!!!lksdcalsdjfc.ksdn', req.body);
 
     db.User.findOne({email: req.body.email}, function(err, foundUser) {
-        if(err){ return res.status(204).send('user not found')};
+ 
         console.log(foundUser);
         var hash = foundUser.password;
-        var plainTxt = req.body.passTxt
-        var check = bcrypt.compareSync(plainTxt, hash)
+        var plainTxt = req.body.passTxt;
+        var check = bcrypt.compareSync(plainTxt, hash);
         console.log(check)
           if(check){
             res.status(200).send(foundUser.id)
