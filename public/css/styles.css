@@ -116,6 +116,10 @@ body{
    }
 }
 
+.icon{
+  transform: scale(0.2, 0.2);
+}
+
 #login {
 margin-top: 20%;
 
@@ -134,5 +138,9 @@ legend{
 
 color: black;
 
+}
+
+#pageContent{
+  margin-top: 10%;
 }
 
