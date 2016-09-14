@@ -4,8 +4,6 @@
 
 var db = require('../models');
 
-
-// GET /api/Users
 function index(req, res) {
     db.Jobs.find({}, function(err, allJobs) {
         res.json(allJobs);
@@ -17,17 +15,21 @@ function create(req, res) {
     console.log(data)
 
     var newJob = {};
-    newJob.customer_ID = data.customer_ID;
-    newJob.translator_ID = data.translator_ID;
-    newJob.review_ID = data.review_ID
+    newJob.title = data.title;
+    newJob.customer_ID = data.customer;
+    newJob.translator_ID = data.translator;
+    newJob.review_ID = data.review
     newJob.requiredProficiency = data.requiredProficiency;
-    newJob.requiredLanguage = data.requiredLanguage;
+    newJob.requiredLanguage = data.requiredLanguages;
+    newJob.potentialTranslators = data.potential_translator_IDs
     newJob.location = data.location;
+    newJob.scheduled = data.scheduled;
+    newJob.appointment = data.appointment;
     newJob.completed = data.completed
 
 
 
-    db.User.create(newUser, function(err, result) {
+    db.Job.create(newJob, function(err, result) {
         if (err) { console.log(err) };
         res.status(200).send(result);
     })
@@ -35,10 +37,10 @@ function create(req, res) {
 
 
 // function show(req, res) {
-//     db.User.findById(req.params.userId, function(err, foundUser) {
+//     db.User.findById(req.params.jobId, function(err, foundJob) {
 //         if (err) { console.log('usersController.show error', err); }
-//         console.log('usersController.show responding with', foundUser);
-//         res.json(foundUser);
+//         console.log('usersController.show responding with', foundJob);
+//         res.json(foundJob);
 //     });
 // }
 

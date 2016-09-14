@@ -1,1 +1,43 @@
-<h1> NEW REVIEW FORM </h1>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-6 col-xs-offset-3">
+            <form class="form-horizontal" ng-submit="createReview()">
+                <fieldset>
+                    <!-- Form Name -->
+                    <legend>Leave a Review</legend>
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-12 control-label">Title</label>
+                        <div class="col-md-12">
+                            <input id="title" ng-model="newReview.title" type="text" class="form-control input-md" required="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-12 control-label">Are You A Customer Reviewing a Translator?</label>
+                        <div class="col-md-12">
+                            <input id="customerReview" ng-model="newReview.customerReview" type="text" class="form-control input-md" required="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-12 control-label">Comments</label>
+                        <div class="col-md-12">
+                            <input id="comments" ng-model="newReview.body" type="text" class="form-control input-md" required="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-12 control-label">Overall Experience</label>
+                        <div class="col-md-12">
+                            <input id="overall" ng-model="newReview.overall" type="text" class="form-control input-md" required="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">Post Review</label>
+                        <div class="col-md-4">
+                            <button class="btn btn-primary">Submit</button>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>

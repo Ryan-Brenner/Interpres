@@ -2,6 +2,7 @@ var mongoose = require("mongoose"),
     Schema = mongoose.Schema;
 
 var ReviewSchema = new Schema({
+  title: {type:String, required: true},
   job: {type:String, required: true}, // ref jobID
   customer: {type: String, required: true}, // ref userID
   translator: {type: String, required: true}, // ref userID
