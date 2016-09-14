@@ -3,9 +3,9 @@ var mongoose = require("mongoose"),
 
 var JobSchema = new Schema({
     title: {type:String, required: true},
-    customer: {type:Number, required: true},
-    translator: {type:Number, required: true},
-    review: {type:Number, required: true},
+    customer: {type: Schema.Types.ObjectId, ref: 'Users'},
+    translator: {type: Schema.Types.ObjectId, ref: 'Users'},
+    review: {type: Schema.Types.ObjectId, ref: 'Reviews'},
     requiredProficiency: { type: Array, default: []},
     requiredLanguages: { type: Array, default: [{ from: "English" }, { to: "French" }] },
     potential_translator_IDs: { type: Array, default: []}, /// need a function to auto populate
