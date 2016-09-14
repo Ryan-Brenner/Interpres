@@ -31,9 +31,4 @@ app.config(function($routeProvider) {
         controller: 'reviewCtrl'
     })
 
-
-
-
-
-
 });

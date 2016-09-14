@@ -6,8 +6,8 @@ var JobSchema = new Schema({
     customer: {type:Number, required: true},
     translator: {type:Number, required: true},
     review: {type:Number, required: true},
-    required_proficiency: { type: Array, default: []},
-    required_languages: { type: Array, default: [{ from: "English" }, { to: "French" }] },
+    requiredProficiency: { type: Array, default: []},
+    requiredLanguages: { type: Array, default: [{ from: "English" }, { to: "French" }] },
     potential_translator_IDs: { type: Array, default: []}, /// need a function to auto populate
     location: { type: Array, default: [{ latitude: 37.7749 }, { longitude: -122.4194 }] },
     scheduled: { type: Boolean, default: false },
