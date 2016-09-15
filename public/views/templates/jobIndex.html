@@ -1,43 +1,17 @@
 <input type="text" class="form-control" ng-model="searchText" placeholder="Search Jobs">
-  <div ng-repeat="job in jobs">
-    <div class="col-md-6">
-      <div class="panel panel-default">
-      <h7><span class='col-xs-5 col-xs-offset-7'>Time Until Translation: {{job.appointment}}</span> </h7>
-                  
-        <div class="panel-body">
-          <div class='row'>
-            <div class="col-md-12 col-xs-12">
-              <ul class="list-group form-inline">
-                
-                  <span> <p class = "jobName" >Job Name:</p><a ng-href="/#/api/jobs/{{job._id}}">{{job.title}}</a></span>
-          
-                <li class="list-group-item">
-                  <h4 class='inline-header'>Customer:</h4>
-                  <a ng-href="/#/api/users/{{job.customer[0].username}}">{{job.customer[0].username}}</a>
-                </li>
-
-                <li class="list-group-item">
-                  <h4 class='inline-header'>Looking for Translation From --> To</h4>
-                  <span>{{job.requiredLanguages[0].from}} --> {{job.requiredLanguages[1].to}}</span>
-                </li>
-
-                 <li class="list-group-item">
-                  <h4 class='inline-header'>Details:</h4>
-                  <span>{{job.requiredProficiency[0]}}</span>
-                </li>
-
-                  <li class="list-group-item">
-                  <h4 class='inline-header'>Location:</h4>
-                  <span>{{job.location[0]}}</span>    
-                  </li>
-              </ul>
-            </div>
-          </div>
-           <a ng-href="/#/jobPosting/{{job._id}}">More About This Translation Job</a>
-            </div>
-          </div>
+<div ng-repeat="job in jobs">
+    <div class="row demo-tiles col-xs-3">
+            <div class="tile">
+                <large id="jobName" class="tile-title">Job Name:<a id="jobTitle" ng-href="/#/jobPosting/{{job._id}}"> {{job.title}}</a></large>
+                <br>
+                <small id="language1">Original Language:</small>  
+                <span class="flag-icon flag-icon-de"></span>
+                <br>
+                <small id="language2">Translated Language</small>
+                <span class="flag-icon flag-icon-us"></span>
+                <br>
+                <small id="timeEllapsed">Posted:</small><span id = "timer"> {{Date.now() - job.created_at/1000}}seconds ago</span>
+                <a class="btn btn-primary" href="/#/jobPosting/{{job._id}}">Click for Details</a>
         </div>
-      </div>
     </div>
-  </div>
 </div>

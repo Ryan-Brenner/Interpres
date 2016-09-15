@@ -12,8 +12,7 @@
 */
 body{
 	color: white;
-	background: #666666;
-
+	background: #666666 !important;
 }
 
 span{
@@ -29,10 +28,16 @@ h4{
 	text-align: center;
 }
 
+.demo-tiles{
+margin: 2% auto 2%;
+
+
+}
+
 
 .btn-primary {
   color: white;
-  background-color: #71A9F7;
+  background-color: #E67F0D;
   border-width: 0px;
   font-weight: 300;
   -o-transition: background 0.1s ease-in, background 0.1s ease-out;
@@ -153,3 +158,43 @@ color: black;
   margin-top: 10%;
 }
 
+#language1, #language2, #jobName, #timeEllapsed{
+  font-size: 26;
+  font-weight: 700;
+  color: #764134;
+
+}
+#timer{
+  font-size: 18;
+  color: #AD343E;
+  font-weight: 900;
+}
+
+#jobTitle{
+  color: #71A9F7;
+
+}
+
+
+.form-group{
+margin-top: -2%;
+margin-bottom: -1%;
+
+}
+
+.form-top{
+
+margin-bottom: -5%;
+}
+.form-password{
+margin-top: 2%;
+}
+.form-bottom{
+margin-top: 5%;
+margin-bottom: 1%;
+
+}
+
+.btn-container{
+  margin-top: 5%;
+}
