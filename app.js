@@ -39,10 +39,10 @@ app.get('/api/users/:userId', controllers.users.show);
 app.put('/api/users/:userId/update', controllers.users.update);
 app.delete('/api/users/:userId', controllers.users.destroy);
 
-app.get('/api/jobs', controllers.users.index);
+app.get('/api/jobs', controllers.jobs.index);
 app.post('/api/jobs', controllers.jobs.create);
-// app.get('/api/jobs/:jobId', controllers.jobs.show);
-// app.put('/api/jobs/:jobId/update', controllers.jobs.update);
+app.get('/api/jobs/:id', controllers.jobs.show);
+app.put('/api/jobs/:id/update', controllers.jobs.update);
 // app.delete('/api/jobs/:jobId', controllers.jobs.destroy);
 
 app.get('/api/reviews', controllers.reviews.index);

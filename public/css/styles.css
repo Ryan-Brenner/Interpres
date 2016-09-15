@@ -16,6 +16,15 @@ body{
 
 }
 
+span{
+
+  color:black;
+}
+
+h4{
+  color: black;
+}
+
 .headline{
 	text-align: center;
 }

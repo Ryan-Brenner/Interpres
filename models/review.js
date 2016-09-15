@@ -10,8 +10,8 @@ var ReviewSchema = new Schema({
   overall: {type: Number, default: 5},
   body: {type: String, required: true},
   updatedBy: {type: Array, default: []},
-  created_at: {type: Date, default: Date.now},
-  updated_at: {type: Date, default: Date.now}
+  created_at: {type: Date, default: Date.now()},
+  updated_at: {type: Date, default: Date.now()}
 });
 
 

@@ -13,8 +13,8 @@ var UserSchema = new Schema({
   location: {type: Array}, // [Long, Lat] obtained through Geoloc
   pois: {type: Array},
   jobReqs: {type: Schema.Types.ObjectId, ref: 'Jobs'},
-  created_at: {type: Date, default: Date.now},
-  updated_at: {type: Date, default: Date.now}
+  created_at: {type: Date, default: Date.now()},
+  updated_at: {type: Date, default: Date.now()}
 });
 
 
