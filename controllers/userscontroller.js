@@ -78,7 +78,8 @@ function credCheck(req, res) {
         var check = bcrypt.compareSync(plainTxt, hash);
         console.log(check)
           if(check){
-            res.status(200).send(foundUser.id)
+            console.log('This is the user, saved on the request!');
+            res.status(200).send(foundUser)
           } else {
             res.status(200).send(false)
           }    

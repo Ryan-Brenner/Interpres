@@ -26,7 +26,7 @@ function loginCtrl($http, $scope, $location) {
             console.log(response.data)
             if(response.data !== false) {
                 console.log("Success!")
-                $location.path('/api/users/'+response.data)
+                $location.path('/profile/'+response.data._id)
             }
             else if (response.data === false) {
                 console.log("Incorrect Password")

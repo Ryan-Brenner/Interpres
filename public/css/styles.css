@@ -10,20 +10,46 @@
 **********************************************
 **********************************************
 */
-body{
-	color: white;
-	background: #666666;
 
+
+
+
+.tile{
+  height: 225px;
 }
 
+body{
+	color: white;
+	background: #666666 !important;
+}
+
+span{
+
+  color:black;
+}
+
+h4{
+  color: black;
+}
+.navbar-brand{
+font-weight: 300;
+font-style: italic;
+
+}
 .headline{
 	text-align: center;
+}
+
+.demo-tiles{
+margin: 2% auto 2%;
+
+
 }
 
 
 .btn-primary {
   color: white;
-  background-color: #71A9F7;
+  background-color: #E67F0D;
   border-width: 0px;
   font-weight: 300;
   -o-transition: background 0.1s ease-in, background 0.1s ease-out;
@@ -142,5 +168,202 @@ color: black;
 
 #pageContent{
   margin-top: 10%;
+}
+
+#language1, #language2, #jobName, #timeEllapsed{
+  font-size: 26;
+  font-weight: 700;
+  color: #764134;
+
+}
+#timer{
+  font-size: 18;
+  color: #AD343E;
+  font-weight: 900;
+}
+
+#jobTitle{
+  color: #71A9F7;
+
+}
+
+
+.form-group{
+margin-top: -2%;
+margin-bottom: -1%;
+
+}
+
+.form-top{
+
+margin-bottom: -5%;
+}
+.form-password{
+margin-top: 2%;
+}
+.form-bottom{
+margin-top: 5%;
+margin-bottom: 1%;
+
+}
+
+.btn-container{
+  margin-top: 5%;
+}
+
+
+
+
+
+.mars {
+    
+    /* 
+     * Make the initial position to be the center of the circle you want this
+     * object follow.
+     */
+    position: absolute;
+    left: 315px;
+    top: 143px;
+
+    /*
+     * Sets up the animation duration, timing-function (or easing)
+     * and iteration-count. Ensure you use the appropriate vendor-specific 
+     * prefixes as well as the official syntax for now. Remember, tools like 
+     * CSS Please are your friends!
+     */
+    -webkit-animation: myOrbit 2s linear infinite; /* Chrome, Safari 5 */
+       -moz-animation: myOrbit 2s linear infinite; /* Firefox 5-15 */
+         -o-animation: myOrbit 2s linear infinite; /* Opera 12+ */
+            animation: myOrbit 2s linear infinite; /* Chrome, Firefox 16+, 
+                                                      IE 10+, Safari 5 */ 
+}
+
+/*
+ * Set up the keyframes to actually describe the begining and end states of 
+ * the animation.  The browser will interpolate all the frames between these 
+ * points.  Again, remember your vendor-specific prefixes for now!
+ */
+@-webkit-keyframes myOrbit {
+    from { -webkit-transform: rotate(0deg) translateX(100px) rotate(0deg); }
+    to   { -webkit-transform: rotate(360deg) translateX(100px) rotate(-360deg); }
+}
+
+@-moz-keyframes myOrbit {
+    from { -moz-transform: rotate(0deg) translateX(100px) rotate(0deg); }
+    to   { -moz-transform: rotate(360deg) translateX(100px) rotate(-360deg); }
+}
+
+@-o-keyframes myOrbit {
+    from { -o-transform: rotate(0deg) translateX(100px) rotate(0deg); }
+    to   { -o-transform: rotate(360deg) translateX(100px) rotate(-360deg); }
+}
+
+@keyframes myOrbit {
+    from { transform: rotate(0deg) translateX(100px) rotate(0deg); }
+    to   { transform: rotate(360deg) translateX(100px) rotate(-360deg); }
+}
+
+.earth {
+    
+    /* 
+     * Make the initial position to be the center of the circle you want this
+     * object follow.
+     */
+    position: absolute;
+    left: 315px;
+    top: 143px;
+  
+    /*
+     * Sets up the animation duration, timing-function (or easing)
+     * and iteration-count. Ensure you use the appropriate vendor-specific 
+     * prefixes as well as the official syntax for now. Remember, tools like 
+     * CSS Please are your friends!
+     */
+    -webkit-animation: earthOrbit 2s linear infinite; /* Chrome, Safari 5 */
+       -moz-animation: earthOrbit 2s linear infinite; /* Firefox 5-15 */
+         -o-animation: earthOrbit 2s linear infinite; /* Opera 12+ */
+            animation: earthOrbit 2s linear infinite;
+            animation-delay: earthOrbi 0.68s linear infinite;            /* Chrome, Firefox 16+, 
+      -webkit-animation: earthOrbit 2s linear infinite; /* Chrome, Safari 5 */
+       -moz-animation: earthOrbi 3s linear infinite; /* Firefox 5-15 */
+         -o-animation: earthOrbi 3s linear infinite; /* Opera 12+ */
+            animation: earthOrbi 3s linear infinite;                                                 IE 10+, Safari 5 */
+    
+    
+    
+}
+
+/*
+ * Set up the keyframes to actually describe the begining and end states of 
+ * the animation.  The browser will interpolate all the frames between these 
+ * points.  Again, remember your vendor-specific prefixes for now!
+ */
+@-webkit-keyframes earthOrbit {
+    from { -webkit-transform: rotate(0deg) translateX(50px) rotate(0deg); }
+    to   { -webkit-transform: rotate(360deg) translateX(50px) rotate(-360deg); }
+
+}
+
+@-moz-keyframes earthOrbit {
+    from { -moz-transform: rotate(0deg) translateX(50px) rotate(0deg); }
+    to   { -moz-transform: rotate(360deg) translateX(50px) rotate(-360deg); }
+}
+
+@-o-keyframes earthOrbit {
+    from { -o-transform: rotate(0deg) translateX(50px) rotate(0deg); }
+    to   { -o-transform: rotate(360deg) translateX(50px) rotate(-360deg); }
+}
+
+@keyframes earthOrbit {
+    from { transform: rotate(0deg) translateX(50px) rotate(0deg); }
+    to   { transform: rotate(360deg) translateX(50px) rotate(-360deg); }
+}
+@-webkit-keyframes earthOrbi {
+    from { -webkit-transform: rotate(0deg) translateX(100px) rotate(0deg); }
+    to   { -webkit-transform: rotate(360deg) translateX(50px) rotate(-360deg); }
+
+}
+
+@-moz-keyframes earthOrbi {
+    from { -moz-transform: rotate(0deg) translateX(100px) rotate(0deg); }
+    to   { -moz-transform: rotate(360deg) translateX(5px) rotate(-360deg); }
+}
+
+@-o-keyframes earthOrbi {
+    from { -o-transform: rotate(0deg) translateX(100px) rotate(0deg); }
+    to   { -o-transform: rotate(360deg) translateX(5px) rotate(-360deg); }
+}
+
+@keyframes earthOrbi {
+    from { transform: rotate(0deg) translateX(100px) rotate(0deg); }
+    to   { transform: rotate(360deg) translateX(5px) rotate(-360deg); }
+}
+
+
+
+
+
+
+
+@keyframes circle { 
+  to { transform: rotate(1turn); } 
+}
+@keyframes updown {
+  to { transform: translateY(200px); } 
+}
+figure {
+  animation: updown 1s infinite ease-in-out alternate;
+}
+.earth {
+  width: 50px; height: 50px;
+  border-radius: 50%; background: red;
+  transform-origin: center 300%;
+  animation: circle 5s infinite linear;
+}
+.saturn {
+  width: 50px; height: 50px;
+  border-radius: 50%; background: red;
+  transform-origin: center -100%;
+  animation: circle 2s infinite linear;
 }
 

@@ -63,8 +63,9 @@ function create(req, res) {
 module.exports = {
     index: index,
     create: create,
+    
 };
-
-    // show: show,
+// show: show
+    
     // destroy: destroy,
     // update: update

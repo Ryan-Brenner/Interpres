@@ -10,23 +10,28 @@ app.config(function($routeProvider) {
     	templateUrl: 'public/views/templates/login.html',
     	controller: 'loginCtrl'
     })
-
     .when('/register', {
     	templateUrl: 'public/views/templates/register.html',
         controllerAs: 'usersIndexCtrl',
         controller: 'UsersIndexController'
     })
-        .when('/profile', {
+    .when('/profile/:id', {
         templateUrl: 'public/views/templates/userProfile.html',
         controller: 'UsersIndexController'
     })
-
-        .when('/newjob', {
+    .when('/newjob', {
         templateUrl: 'public/views/templates/newJob.html',
         controller: 'jobCtrl'
     })
-
-        .when('/review', {
+    .when('/browseJobs', {
+        templateUrl: 'public/views/templates/jobIndex.html',
+        controller: 'jobCtrl'
+    })
+    .when('/jobPosting/:id', {
+        templateUrl: 'public/views/templates/jobShow.html',
+        controller: 'jobShowCtrl'
+    })
+    .when('/review', {
         templateUrl: 'public/views/templates/newReview.html',
         controller: 'reviewCtrl'
     })

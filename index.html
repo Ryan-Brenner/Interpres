@@ -8,32 +8,74 @@
     <!-- VENDOR SCRIPTS -->
     <script src="./vendor/angular/angular.min.js"></script>
     <script src="./vendor/angular-route/angular-route.min.js"></script>
+    
+ 
+
     <!-- STYLESHEETS -->
+    
     <link rel="stylesheet" href="./vendor/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="./vendor/bootstrap/dist/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="./vendor/flat-ui/dist/css/flat-ui.css">
+    <link rel="stylesheet" href="./vendor/flat-ui/dist/css/flat-ui.min.css">
+    <link rel="stylesheet" href="./vendor/flag-icon-css/css/flag-icon.css">
     <link rel="stylesheet" href="./public/css/styles.css">
     <!-- APPLICATION SCRIPTS -->
     <script src="./public/js/app.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCiDFICJK32XtXsLSbyXvXdIEMpvY5Fc70"></script>
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js">
+    </script>
+  <!--   < script src="./vendor/flat-ui/dist/js/flat-ui.min.js"  >< /script> -->
+    <script src="./vendor/flat-ui/dist/js/vendor/jquery.min.js"></script>
     <script src="./public/js/controllers/homeCtrl.js"></script>
     <script src="./public/js/controllers/UsersIndexController.js"></script>
     <script src="./public/js/controllers/loginCtrl.js"></script>
     <script src="./public/js/controllers/jobCtrl.js"></script>
     <script src="./public/js/controllers/reviewCtrl.js"></script>
+    <script src="./public/js/controllers/jobShowCtrl.js"></script>
+    <script src="./vendor/bootstrap/dist/js/bootstrap.min.js"></script>
 </head>
 
 <body ng-app="polyglot-loc">
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="/"><img src="../styles/raven-ico.svg"></a>
-            </div>
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-3">
+                <span class="sr-only">Toggle navigation</span>
+            </button>
+            <a class="navbar-brand" href="#/">Interpres</a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="navbar-collapse-3">
             <ul class="nav navbar-nav">
-                <li><a href="/bio">Bio</a></li>
-                <li><a href="/books">Books</a></li>
-                <li><a href="/music">Music</a></li>
-                <li><a href="/docs">API Docs</a></li>
+                <li><a href="/#/register">Register</a></li>
+                <li><a href="/#/browseJobs">Browse Jobs</a></li>
+                <li><a href="/#/login">Login</a></li>
+            </ul>
+            <form class="navbar-form navbar-left" action="#" role="search">
+                <div class="form-group">
+                    <div class="input-group">
+                        <input class="form-control" id="navbarInput-01" type="search" placeholder="Search">
+                        <span class="input-group-btn">
+                  <button type="submit" class="btn"><span class="fui-search"></span></button>
+                        </span>
+                    </div>
+                </div>
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">More<b class="caret"></b></a>
+                    <ul class="dropdown-menu navbar-collapse">
+                        <li><a href="/#/newjob">Create a New Job</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#/">Logout</a></li>
+                    </ul>
+                </li>
+                <li><a href="#"><span class="visible-sm visible-xs">Settings<span class="fui-gear"></span></span><span class="visible-md visible-lg"><span class="fui-gear"></span></span></a></li>
             </ul>
         </div>
+        <!-- /.navbar-collapse -->
     </nav>
     <div id="pageContent" class='container-fluid'>
         <div ng-view></div>

@@ -12,9 +12,9 @@ var UserSchema = new Schema({
   role: {type:Number, required: true}, // Translator(0) , Customer(1), Admin(9)
   location: {type: Array}, // [Long, Lat] obtained through Geoloc
   pois: {type: Array},
-  jobReqs: {type:Schema.Types.ObjectId, ref: 'Jobs'},
-  created_at: {type: Date, default: Date.now},
-  updated_at: {type: Date, default: Date.now}
+  jobReqs: {type: Schema.Types.ObjectId, ref: 'Jobs'},
+  created_at: {type: Date, default: Date.now()},
+  updated_at: {type: Date, default: Date.now()}
 });
 
 
