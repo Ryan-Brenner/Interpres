@@ -12,9 +12,9 @@ function jobCtrl($http, $scope, $location) {
         $scope.jobPosting.customer = '';
         $scope.jobPosting.translator = '';
         $scope.jobPosting.review = '';
-        $scope.jobPosting.requiredProficiency = '';
         $scope.jobPosting.requiredLanguage1 = '';
         $scope.jobPosting.requiredLanguage2 = '';
+        $scope.jobPosting.requiredProficiency = [$scope.jobPosting.requiredLanguage1,$scope.jobPosting.requiredLanguage2]
         $scope.jobPosting.potential_translator_IDs = '';
         $scope.jobPosting.location = '';
         $scope.jobPosting.scheduled = '';

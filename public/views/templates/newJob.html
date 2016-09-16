@@ -1,65 +1,82 @@
-<div class="container">
-        <div class="col-xs-6 col-xs-offset-3">
-            <form class="form-horizontal" ng-submit="createJob()">
-                <fieldset>
-                    <!-- Form Name -->
-                    <legend>Add New Job</legend>
-                    <!-- Text input-->
-                    <div class="form-group">
-                        <label class="col-md-6 control-label">Job Title</label>
-                        <div class="col-md-6">
-                            <input id="title" ng-model="jobPosting.title" type="text" class="form-control input-md" required="">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-md-6 control-label">Language Translating From</label>
-                        <div class="col-md-6">
-                            <input id="requiredLanguages" ng-model="jobPosting.requiredLanguage1" type="text" class="form-control input-md" required="">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-md-6 control-label">Language Translating To</label>
-                        <div class="col-md-6">
-                            <input id="requiredLanguages" ng-model="jobPosting.requiredLanguage2" type="text" class="form-control input-md" required="">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-md-6 control-label">Complication of Task</label>
-                        <div class="col-md-6">
-                            <input id="requiredProficiency" ng-model="jobPosting.requiredProficiency" type="text" class="form-control input-md" required="">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-md-6 control-label">Need Translation Now?</label>
-                        <div class="col-md-6">
-                            <input id="scheduled" ng-model="jobPosting.scheduled" type="text" class="form-control input-md" required="">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-md-6 control-label">Time of Translation</label>
-                        <div class="col-md-6">
-                            <input id="appointment" ng-model="jobPosting.appointment" type="text" class="form-control input-md" required="">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-md-6 control-label">Your Account Email</label>
-                        <div class="col-md-6">
-                            <input id="email" ng-model="userConfirm.email" type="text" class="form-control input-md" required="">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-md-6 control-label">Your Account Password</label>
-                        <div class="col-md-6">
-                            <input id="passTxt" ng-model="userConfirm.passTxt" type="password" class="form-control input-md" required="">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-md-4 control-label">Post Job</label>
-                        <div class="col-md-4">
-                            <button class="btn btn-primary">Submit</button>
-                        </div>
-                    </div>
-                </fieldset>
-            </form>
-        </div>
+<div class="col-xs-6 col-xs-offset-3">
+    <form class="form-horizontal" ng-submit="createJob()">
+        <fieldset>
+            <!-- Form Name -->
+            <legend class="col-xs-6 col-xs-offset-3">Post a New Job</legend>
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-8 col-xs-offset-2">Job Title</label>
+                <div class="col-md-8 col-xs-offset-2">
+                    <input id="title" ng-model="jobPosting.title" type="text" class="form-control input-md" required="">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-8 col-xs-offset-2">Language Translating From</label>
+                <div class="col-md-8 col-xs-offset-2">
+                    <select id="requiredLanguages" ng-model="jobPosting.requiredLanguage1" data-toggle="select" class="form-control select select-default mrs mbm" required="">
+                        <option value="[{flag: 'fr'}, {lang:'French'}]">French</option>
+                        <option value="['de', 'German']">German</option>
+                        <option value="['ru', 'Russian']">Russian</option>
+                        <option value="['us', 'English']">English</option>
+                        <option value="['cn', 'Chinese']">Chinese</option>
+                        <option value="['kr', 'Korean']">Korean</option>
+                        <option value="['vn', 'Vietnamese']">Vietnamese</option>
+                        <option value="['il', 'Hebrew']">Hebrew</option>
+                        <option value="['jp', 'Japanese']">Japanese</option>
+                        <option value="['gr', 'Greek']">Hebrew</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-8 col-xs-offset-2">Language Translating To</label>
+                <div class="col-md-8 col-xs-offset-2">
+                    <select id="requiredLanguages" ng-model="jobPosting.requiredLanguage2" data-toggle="select" class="form-control select select-default mrs mbm" required="">
+                        <option value="['fr', 'French']">French</option>
+                        <option value="['de', 'German']">German</option>
+                        <option value="['ru', 'Russian']">Russian</option>
+                        <option value="['us', 'English']">English</option>
+                        <option value="['cn', 'Chinese']">Chinese</option>
+                        <option value="['kr', 'Korean']">Korean</option>
+                        <option value="['vn', 'Vietnamese']">Vietnamese</option>
+                        <option value="['il', 'Hebrew']">Hebrew</option>
+                        <option value="['jp', 'Japanese']">Japanese</option>
+                        <option value="['gr', 'Greek']">Hebrew</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-8 col-xs-offset-2">Complication of Task</label>
+                <div class="col-md-8 col-xs-offset-2">
+                    <input id="requiredProficiency" ng-model="jobPosting.requiredProficiency" type="text" class="form-control input-md" required="">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-8 col-xs-offset-2">Need Translation Now?</label>
+                <div class="col-md-8 col-xs-offset-2">
+                    <input id="scheduled" ng-model="jobPosting.scheduled" checked type="checkbox" class="form-control input-md" required="">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-8 col-xs-offset-2">Time of Translation</label>
+                <div class="col-md-8 col-xs-offset-2">
+                    <input id="appointment" ng-model="jobPosting.appointment" type="text" class="form-control input-md" required="">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-8 col-xs-offset-2">Your Account Email</label>
+                <div class="col-md-8 col-xs-offset-2">
+                    <input id="email" ng-model="userConfirm.email" type="text" class="form-control input-md" required="">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-8 col-xs-offset-2">Your Account Password</label>
+                <div class="col-md-8 col-xs-offset-2">
+                    <input id="passTxt" ng-model="userConfirm.passTxt" type="password" class="form-control input-md" required="">
+                </div>
+            </div>
+            <div class="form-group col-xs-8 col-xs-offset-4 btn-container">
+                <button class="col-xs-8 col-xs-offset-4 form-bottom btn btn-primary btn-large btn-block">Post Job</button>
+            </div>
+        </fieldset>
+    </form>
 </div>
