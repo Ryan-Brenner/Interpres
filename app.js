@@ -8,6 +8,7 @@ var controllers = require('./controllers');
 var mongoose = require('mongoose');
 var ejs = require('ejs');
 
+
 // serve static files from public folder
 // app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -28,9 +29,15 @@ app.set('view engine', 'html');
  * ROUTES *
  **********/
 
+
+
 app.get('/', function homepage (req, res) {
-  res.sendFile(__dirname + '/index.html');
+
+	res.sendFile(__dirname+'/index.html')
 });
+
+
+app.get('/translatedHome/:lang/:text', controllers.translations.test)
 
 app.get('/api', controllers.api.index);
 app.get('/api/users', controllers.users.index);
