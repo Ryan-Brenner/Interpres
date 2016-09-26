@@ -29,8 +29,11 @@ app.set('view engine', 'html');
  **********/
 
 app.get('/', function homepage (req, res) {
-  res.sendFile(__dirname + '/index.html');
+	res.sendFile(__dirname+'/index.html')
 });
+
+
+app.get('/translatedHome/:lang/:text', controllers.translations.test)
 
 app.get('/api', controllers.api.index);
 app.get('/api/users', controllers.users.index);
