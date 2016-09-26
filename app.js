@@ -8,7 +8,6 @@ var controllers = require('./controllers');
 var mongoose = require('mongoose');
 var ejs = require('ejs');
 
-
 // serve static files from public folder
 // app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded({ extended: true }));
