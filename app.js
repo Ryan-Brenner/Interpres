@@ -28,10 +28,7 @@ app.set('view engine', 'html');
  * ROUTES *
  **********/
 
-
-
 app.get('/', function homepage (req, res) {
-
 	res.sendFile(__dirname+'/index.html')
 });
 
