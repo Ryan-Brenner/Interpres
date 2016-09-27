@@ -32,6 +32,7 @@ app.get('/', function homepage (req, res) {
 	res.sendFile(__dirname+'/index.html')
 });
 
+app.get('/api/jobs/locations', controllers.maps.markerIndex);
 
 app.get('/translatedHome/:lang/:text', controllers.translations.test)
 

@@ -17,7 +17,6 @@
     <link rel="stylesheet" href="./public/css/styles.css">
     <!-- APPLICATION SCRIPTS -->
     <script src="./public/js/app.js"></script>
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCiDFICJK32XtXsLSbyXvXdIEMpvY5Fc70"></script>
     <script src="https://code.jquery.com/jquery-3.1.0.min.js">
     </script>
     <!--   < script src="./vendor/flat-ui/dist/js/flat-ui.min.js"  >< /script> -->
@@ -73,6 +72,28 @@
         </div>
         <!-- /.navbar-collapse -->
     </nav>
+    <div id="map">
+        <script>
+        var map;
+
+        function initMap() {
+            var myLatlng = new google.maps.LatLng(37.78, -122.44);
+            var mapOptions = {
+                zoom: 12,
+                center: myLatlng,
+                scrollwheel: false
+            }
+            var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+
+            var marker = new google.maps.Marker({
+                position: myLatlng,
+                title: "Hello World!"
+            });
+            marker.setMap(map);
+        };
+        </script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBHLett8djBo62dDXj0EjCimF8Rd6E8cxg&callback=initMap" async defer></script>
+    </div>
     <div id="pageContent" class='container-fluid'>
         <div ng-view></div>
     </div>
