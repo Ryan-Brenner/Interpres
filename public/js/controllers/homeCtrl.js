@@ -4,24 +4,36 @@ angular
 homeCtrl.$inject = ['$scope', '$http'];
 
 function homeCtrl($scope, $http) {
-    $scope.greetingTranslated = ''
-    $scope.greetingText = "Need A Translation"
+    $scope.greetingText = "Need A Translation";
+    $scope.jobs = [];
 
     function init() {
         console.log('*** INIT HOME CONTROLLER ***');
         var lang = window.navigator.language.substring(0, 2).toString()
         var text = $scope.greetingText.toString()
-        console.log(text)
-        console.log(lang)
         $http({
             method: 'GET',
             url: '/translatedHome/' + lang + '/' + text,
         }).then(function successCallback(response) {
-            greetingTranslated = response.data.translatedText;
-                $scope.greetingText = response.data.translatedText
+            $scope.greetingText = response.data.translatedText
         }, function errorCallback(response) {
             console.log('There was an error getting the data', response);
         });
+        $http({
+            method: 'GET',
+            url: '/api/jobs/locations'
+        }).then(function successCallback(response) {
+             // = response.data
+             for (var i=response.data.length-1; i>=0; i--){
+             $scope.jobs.push([ response.data[i].location[0], "test"] ) 
+
+             console.log(response.data[i]); 
+         };
+         console.log($scope.jobs[0]);
+        }, function errorCallback(response) {
+            console.log('There was an error getting the data', response);
+        });
+
     };
     init();
 };
