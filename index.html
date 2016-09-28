@@ -77,6 +77,13 @@
         var map;
 
         function initMap() {
+            var locations = [
+                ['Bondi Beach', 35.890542, -121.274856, 4],
+                ['Coogee Beach', 36.923036, -121.259052, 5],
+                ['Cronulla Beach', 37.028249, -121.157507, 3],
+                ['Manly Beach', 35.80010128657071, -121.28747820854187, 2],
+                ['Maroubra Beach', 38.950198, -121.259302, 1]
+            ];
             var myLatlng = new google.maps.LatLng(37.78, -122.44);
             var mapOptions = {
                 zoom: 12,
@@ -90,6 +97,15 @@
                 title: "Hello World!"
             });
             marker.setMap(map);
+
+            for (i = 0; i < locations.length; i++) {
+                marker = new google.maps.Marker({
+                    position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+                    map: map
+                });
+
+
+            };
         };
         </script>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBHLett8djBo62dDXj0EjCimF8Rd6E8cxg&callback=initMap" async defer></script>
