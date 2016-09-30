@@ -110,6 +110,31 @@
         </script>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBHLett8djBo62dDXj0EjCimF8Rd6E8cxg&callback=initMap" async defer></script>
     </div>
+        <div>
+       Search by Address <input type="text" id="address-input">
+       <button onclick="searchAddress();">Search</button>
+    </div>   
+    <script>
+    function searchAddress() {
+
+  var addressInput = document.getElementById('address-input').value;
+
+  var geocoder = new google.maps.Geocoder();
+
+  geocoder.geocode({address: addressInput}, function(results, status) {
+
+    if (status == google.maps.GeocoderStatus.OK) {
+    var loc = [];
+      var lat = results[0]['geometry']['location']['lat'](results)
+      var lng = results[0]['geometry']['location']['lng'](results);
+    loc.push(lat);
+    loc.push(lng);
+    }
+  })
+}
+    </script>
+
+
     <div id="pageContent" class='container-fluid'>
         <div ng-view></div>
     </div>

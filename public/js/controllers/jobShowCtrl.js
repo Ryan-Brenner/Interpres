@@ -5,24 +5,23 @@ angular
 jobShowCtrl.$inject = ['$http', '$scope', '$location', '$routeParams'];
 
 function jobShowCtrl($http, $scope, $location, $routeParams) {
-        function init() {
+    function init() {
 
-
-        console.log(' *** Were in the JOB_SHOW_CTRL controller, heres your defaults');
+        console.log(' *** Were in the JOB_SHOW_CTRL controller');
     };
 
     init();
 
-        $http({
-            method: 'GET',
-            url: '/api/jobs/'+ $routeParams.id ,
-        }).then(function successCallback(response) {
-            $scope.job = response.data;
-            console.log(response.data);
-        }, function errorCallback(response) {
-            console.log('There was an error getting the data', response);
+    $http({
+        method: 'GET',
+        url: '/api/jobs/' + $routeParams.id ,
+    }).then(function successCallback(response) {
+        $scope.job = response.data;
+        console.log(response.data);
+    }, function errorCallback(response) {
+        console.log('There was an error getting the data', response);
 
-        });
+    });
 
     $scope.acceptJob = function(job) {
 
@@ -35,14 +34,14 @@ function jobShowCtrl($http, $scope, $location, $routeParams) {
                 console.log("Invalid user info, please sign up")
             } else if (response.data !== false) {
                 console.log(response.data._id)
-                $scope.job.translator[0]=response.data;
+                $scope.job.translator[0] = response.data;
                 console.log($scope.job);
 
                 $http({
                     method: 'PUT',
                     url: '/api/jobs/' + job._id + '/update',
                     data: $scope.job
-                }).then(function successCallback(response){
+                }).then(function successCallback(response) {
                     console.log(response)
                     if (response.data !== false) {
                         console.log("Updated job!")
@@ -61,5 +60,16 @@ function jobShowCtrl($http, $scope, $location, $routeParams) {
             console.log('there was an error posting this job');
         });
     };
-};
 
+    $scope.deleteJob= function(job) {
+        $http({
+            method: 'DELETE',
+            url: '/api/jobs/' + $routeParams.id 
+        }).then(function successCallback(json) {
+           $location.path('/browseJobs');
+
+        }, function errorCallback(response) {
+            console.log('There was an error deleting the data', response);
+        });
+    };
+};

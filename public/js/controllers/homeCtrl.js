@@ -25,11 +25,8 @@ function homeCtrl($scope, $http) {
         }).then(function successCallback(response) {
              // = response.data
              for (var i=response.data.length-1; i>=0; i--){
-             $scope.jobs.push([ response.data[i].location[0], "test"] ) 
-
-             console.log(response.data[i]); 
+             $scope.jobs.push([ response.data[i].title , response.data[i].location[0]] ) 
          };
-         console.log($scope.jobs[0]);
         }, function errorCallback(response) {
             console.log('There was an error getting the data', response);
         });
