@@ -32,6 +32,7 @@ app.get('/', function homepage (req, res) {
 	res.sendFile(__dirname+'/index.html')
 });
 
+app.get('/api/jobs/locations', controllers.maps.markerIndex);
 
 app.get('/translatedHome/:lang/:text', controllers.translations.test)
 
@@ -46,7 +47,7 @@ app.get('/api/jobs', controllers.jobs.index);
 app.post('/api/jobs', controllers.jobs.create);
 app.get('/api/jobs/:id', controllers.jobs.show);
 app.put('/api/jobs/:id/update', controllers.jobs.update);
-// app.delete('/api/jobs/:jobId', controllers.jobs.destroy);
+app.delete('/api/jobs/:id', controllers.jobs.destroy);
 
 app.get('/api/reviews', controllers.reviews.index);
 app.post('/api/reviews', controllers.reviews.create);

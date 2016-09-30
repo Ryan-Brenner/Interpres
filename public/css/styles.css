@@ -11,8 +11,13 @@
 **********************************************
 */
 
+#pageContent {
+  margin-top: 0% !important;
+}
 
-
+#map {
+        height: 500px;
+      }
 
 .tile{
   height: 225px;

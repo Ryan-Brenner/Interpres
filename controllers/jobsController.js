@@ -1,7 +1,3 @@
-/************
- * DATABASE *
- ************/
-
 var db = require('../models');
 
 function index(req, res) {
@@ -23,7 +19,7 @@ function create(req, res) {
     newJob.translator = data.translator;
     newJob.review = data.review;
     newJob.requiredProficiency = data.requiredProficiency;
-    newJob.requiredLanguage = data.requiredLanguages;
+    newJob.requiredLanguages = data.requiredLanguages;
     newJob.potentialTranslators = data.potential_translator_IDs
     newJob.location = data.location;
     newJob.scheduled = data.scheduled;
@@ -50,12 +46,12 @@ function show(req, res) {
 
 
 
-// function destroy(req, res) {
-//     db.User.findOneAndRemove({ _id: req.params.userId }, function(err, foundUser) {
-//         // note you could send just send 204, but we're sending 200 and the deleted entity
-//         res.json(foundUser);
-//     });
-// }
+function destroy(req, res) {
+    db.Job.findOneAndRemove({_id: req.params.id }, function(err, foundJob) {
+      
+        res.json(foundJob);
+    });
+}
 
 function update(req, res) {
     console.log('updating with data', req.body);
@@ -76,7 +72,8 @@ module.exports = {
     index: index,
     create: create,
     show: show,
-    update: update
+    update: update,
+    destroy: destroy
 };
 
     

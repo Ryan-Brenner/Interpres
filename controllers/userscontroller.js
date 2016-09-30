@@ -1,7 +1,3 @@
-/************
- * DATABASE *
- ************/
-
 var db = require('../models');
 var bcrypt = require('bcrypt');
 
