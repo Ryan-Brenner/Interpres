@@ -6,12 +6,13 @@
                 <large id="jobName" class="tile-title">Job Name:<a id="jobTitle" ng-href="/#/jobPosting/{{job._id}}"> {{job.title}}</a></large>
                 <br>
                 <small id="language1">Original Language:</small>
-                <span class="flag-icon flag-icon-{job.requiredLanguages[0][0]}}"></span>
+                <span class="flag-icon flag-icon-{{job.requiredLanguages[0][0]}}"></span>
                 <br>
+                <script type="text/javascript">console.log({{job.requiredLanguages}})</script>
                 <small id="language2">Translated Language</small>
-                <span class="flag-icon flag-icon-{job.requiredLanguages[1][0]}}"></span>
+                <span class="flag-icon flag-icon-{{job.requiredLanguages[1][0]}}"></span>
                 <br>
-                <small id="timeEllapsed">Posted:</small><span id="timer"> {{Date.now() - job.created_at}}seconds ago</span>
+                <small id="timeElapsed">Time Since Posted:</small><span id="timer"> {{job.elapsed.days}} days {{job.elapsed.hours}} hours {{job.elapsed.minutes}} minutes {{job.elapsed.seconds}} seconds </span>
                 <a class="btn btn-primary" href="/#/jobPosting/{{job._id}}">Click for Details</a>
             </div>
         </div>

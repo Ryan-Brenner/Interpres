@@ -14,7 +14,8 @@ var JobSchema = new Schema({
     appointment: { type: Number, default: Date.now() },
     created_at: { type: Date, default: Date.now() },
     updated_at: { type: Date, default: Date.now() },
-    completed: { type: Boolean, default: false }
+    completed: { type: Boolean, default: false },
+    elapsed: {type: Number}
 });
 
 

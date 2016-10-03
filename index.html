@@ -73,7 +73,33 @@
         <!-- /.navbar-collapse -->
     </nav>
     <div id="map">
+    <script type="text/javascript">
+         var map;
 
+        function initMap() {
+            var locations= [];
+            var myLatlng = new google.maps.LatLng(37.78, -122.44);
+            var mapOptions = {
+                zoom: 12,
+                center: myLatlng,
+                scrollwheel: false
+            }
+            var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+
+            var marker = new google.maps.Marker({
+                position: myLatlng,
+                title: "Hello World!"
+            });
+            marker.setMap(map);
+
+            for (i = 0; i <locations.length; i++) {
+                marker = new google.maps.Marker({
+                    position: new google.maps.LatLng(locations[i][1],locations[i][2]),
+                    map: map
+                });
+            };
+        };
+        </script>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBHLett8djBo62dDXj0EjCimF8Rd6E8cxg&callback=initMap" async defer></script>
     </div>
     <div id="pageContent" class='container-fluid'>
